@@ -1,0 +1,4 @@
+txt2blink -- Ticker style Blinkenlight movies
+
+This program takes an input string and creates an animation in the
+Blinkenlights movie format with the text scrolling through in ticker style.
