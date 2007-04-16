@@ -1,4 +1,19 @@
 txt2blink -- Ticker style Blinkenlight movies
 
-This program takes an input string and creates an animation in the
-Blinkenlights movie format with the text scrolling through in ticker style.
+    This program takes one line of text and creates an animation in the
+    Blinkenlights movie format. The text can be shown in 1, 2, or 3 lines with
+    matching font size.
+
+    Usage: txt2blink.py [ -1 | -2 | -3 ] Text > out.bml
+
+
+Font installation
+
+    This script has no special font handling; the font names are hard coded.
+    If a font cannot be found, a system default is used, which will work but
+    look different. The defaults are 'Arial' for normal sizes and 'Fixed' for
+    the smallest size.
+
+    If you use fontconfig, it may be that bitmap fonts are not considered at
+    all, so check its configuration. If bitmap fonts are not globally installed
+    look for a file 4x6.pcf.gz and copy it to ~/.fonts/ .
