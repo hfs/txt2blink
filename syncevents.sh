@@ -11,7 +11,7 @@ if [ "$2" == "" ]; then
 	exit 1
 fi
 
-cd "$dir"
+cd "$2"
 
 # Fetch current event listing and make movies.
 # Intention of the temporary files: At all points in time there should be some
@@ -21,8 +21,10 @@ $GETEVENTS $1 | while read date; do
 	$TXT2BLINK -2 "$text" > $date.bml.tmp
 done
 
+shopt -s nullglob
+
 # Remove obsolete events or overwrite with updates
-for old in *.bml; do
+for old in [0-9]*.bml; do
 	if [ -e $old.tmp ]; then
 		mv -f $old.tmp $old
 	else

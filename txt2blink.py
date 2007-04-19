@@ -174,7 +174,7 @@ def main(argv=None):
         print(__doc__)
         return(2)
     text = " ".join(args)
-    Txt2Blink(HEIGHT, WIDTH, modus).txt2bml(text).write(sys.stdout)
+    Txt2Blink(lines=modus).txt2bml(text).write(sys.stdout)
     return 0
 
 if __name__ == "__main__":
