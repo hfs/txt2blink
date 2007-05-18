@@ -23,7 +23,7 @@ $GETEVENTS $1 | while read date; do
 	if [ -e $date.bml ]; then
 		lasttext=$($XMLSTARLET sel -t -v /blm/header/description $date.bml)
 		if [ "$lasttext" == "$text" ]; then
-			cp $date.bml $date.bml.tmp
+			cp -p $date.bml $date.bml.tmp
 		else
 			$TXT2BLINK -2 "$text" > $date.bml.tmp
 		fi
